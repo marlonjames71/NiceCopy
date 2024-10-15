@@ -6,9 +6,48 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		372CA14C2CB1056F00537E83 /* NiceCopy for Safari.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 372CA1332CB1056F00537E83 /* NiceCopy for Safari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		372CA14A2CB1056F00537E83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 372CA1152CB1053800537E83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 372CA1322CB1056F00537E83;
+			remoteInfo = "NiceCopy for Safari";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		372CA1512CB1056F00537E83 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				372CA14C2CB1056F00537E83 /* NiceCopy for Safari.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		372CA11D2CB1053800537E83 /* NiceCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		372CA1332CB1056F00537E83 /* NiceCopy for Safari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NiceCopy for Safari.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		372CA14D2CB1056F00537E83 /* Exceptions for "NiceCopy for Safari" folder in "NiceCopy for Safari" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 372CA1322CB1056F00537E83 /* NiceCopy for Safari */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		372CA11F2CB1053800537E83 /* NiceCopy */ = {
@@ -16,10 +55,29 @@
 			path = NiceCopy;
 			sourceTree = "<group>";
 		};
+		372CA1342CB1056F00537E83 /* NiceCopy for Safari */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				372CA14D2CB1056F00537E83 /* Exceptions for "NiceCopy for Safari" folder in "NiceCopy for Safari" target */,
+			);
+			explicitFolders = (
+				Resources/_locales,
+				Resources/images,
+			);
+			path = "NiceCopy for Safari";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		372CA11A2CB1053800537E83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		372CA1302CB1056F00537E83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				372CA11F2CB1053800537E83 /* NiceCopy */,
+				372CA1342CB1056F00537E83 /* NiceCopy for Safari */,
 				372CA11E2CB1053800537E83 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				372CA11D2CB1053800537E83 /* NiceCopy.app */,
+				372CA1332CB1056F00537E83 /* NiceCopy for Safari.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,10 +115,12 @@
 				372CA1192CB1053800537E83 /* Sources */,
 				372CA11A2CB1053800537E83 /* Frameworks */,
 				372CA11B2CB1053800537E83 /* Resources */,
+				372CA1512CB1056F00537E83 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				372CA14B2CB1056F00537E83 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				372CA11F2CB1053800537E83 /* NiceCopy */,
@@ -69,6 +131,28 @@
 			productName = NiceCopy;
 			productReference = 372CA11D2CB1053800537E83 /* NiceCopy.app */;
 			productType = "com.apple.product-type.application";
+		};
+		372CA1322CB1056F00537E83 /* NiceCopy for Safari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 372CA14E2CB1056F00537E83 /* Build configuration list for PBXNativeTarget "NiceCopy for Safari" */;
+			buildPhases = (
+				372CA12F2CB1056F00537E83 /* Sources */,
+				372CA1302CB1056F00537E83 /* Frameworks */,
+				372CA1312CB1056F00537E83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				372CA1342CB1056F00537E83 /* NiceCopy for Safari */,
+			);
+			name = "NiceCopy for Safari";
+			packageProductDependencies = (
+			);
+			productName = "NiceCopy for Safari";
+			productReference = 372CA1332CB1056F00537E83 /* NiceCopy for Safari.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +165,9 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					372CA11C2CB1053800537E83 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					372CA1322CB1056F00537E83 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -100,12 +187,20 @@
 			projectRoot = "";
 			targets = (
 				372CA11C2CB1053800537E83 /* NiceCopy */,
+				372CA1322CB1056F00537E83 /* NiceCopy for Safari */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		372CA11B2CB1053800537E83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		372CA1312CB1056F00537E83 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +217,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		372CA12F2CB1056F00537E83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		372CA14B2CB1056F00537E83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 372CA1322CB1056F00537E83 /* NiceCopy for Safari */;
+			targetProxy = 372CA14A2CB1056F00537E83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		372CA12A2CB1053900537E83 /* Debug */ = {
@@ -297,6 +407,68 @@
 			};
 			name = Release;
 		};
+		372CA14F2CB1056F00537E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "NiceCopy for Safari/NiceCopy_for_Safari.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D6VB3396MT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NiceCopy for Safari/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NiceCopy for Safari";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marlonraskin.NiceCopy.NiceCopy-for-Safari";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		372CA1502CB1056F00537E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "NiceCopy for Safari/NiceCopy_for_Safari.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D6VB3396MT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NiceCopy for Safari/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NiceCopy for Safari";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marlonraskin.NiceCopy.NiceCopy-for-Safari";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -314,6 +486,15 @@
 			buildConfigurations = (
 				372CA12D2CB1053900537E83 /* Debug */,
 				372CA12E2CB1053900537E83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		372CA14E2CB1056F00537E83 /* Build configuration list for PBXNativeTarget "NiceCopy for Safari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				372CA14F2CB1056F00537E83 /* Debug */,
+				372CA1502CB1056F00537E83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
