@@ -1,52 +1,63 @@
 
 console.log('Background script loaded');
 
-//async function copyCurrentTabUrl() {
-//	let tabs;
-//	try {
-//		tabs = await browser.tabs.query({active: true, currentWindow: true});
-//	} catch (error) {
-//		console.error('Error querying tabs:', error);
-//		return; // Exit the function if an error occurs
-//	}
-//	
-//	if (tabs.length > 0) {
-//		const url = tabs[0].url;
-//		console.log('Sending message to content script with URL:', url);
-//		sendMessageToTab(tabs[0].id, url);
-//	} else {
-//		console.error('No active tab found.');
-//	}
-//}
+// GET TAB URL
 
-//browser.action.onClicked.addListener(() => {
-//	copyCurrentTabUrl();
-//});
-//
-//browser.commands.onCommand.addListener((command) => {
-//	if (command === "copy-url") {
-//		copyCurrentTabUrl();
-//	}
-//});
+async function getCurrentTabUrl() {
+	try {
+		const tabs = await browser.tabs.query({ active: true, currentWindow: true });
+		if (tabs.length > 0) {
+			const currentUrl = tabs[0].url;
+			console.log('Current tab URL:', currentUrl);
+			sendUrlToNativeApp(currentUrl);
+		} else {
+			console.error('No active tab found.');
+		}
+	} catch (error) {
+		console.error('Error querying tabs:', error);
+	}
+}
 
-browser.browserAction.onClicked.addListener(async () => {
-	const tab = await browser.tabs.getCurrent()
-	navigator.clipboard.writeText(tab.url)
-//	sendMessageToTab(tab.id, tab.url)
-})
+// SEND URL TO APP
 
-//browser.commands.onCommand.addListener((command) => {
-//	switch(command) {
-//		case "copy-url":
-//			browser.tabs.getCurrent().then((tab) => {
-//				navigator.clipboard.writeText(tab.url)
-//				sendMessageToTab(tab.id, tab.url)
-//			})
-//	}
-//})
+function sendUrlToNativeApp(url) {
+	const message = {
+		action: 'sendUrl',
+		url: url
+	};
+	
+	browser.runtime.sendNativeMessage('NiceCopy for Safari', message)
+		.then(response => {
+			console.log('Response from native app:', response);
+			
+			if (response.status === "Copied Current URL") {
+				sendMessageToContentScript(response.status);
+			}
+		})
+		.catch(error => {
+			console.error('Error sending message to native app:', error);
+		});
+}
 
-//function sendMessageToTab(tabId, url) {
-//	browser.tabs.sendMessage(tabId, {action: 'copyToClipboard', url: url}).catch(error => {
-//		console.error('Error sending message to tab:', error);
-//	});
-//}
+
+// USER ACTIONS
+
+browser.action.onClicked.addListener(() => {
+	getCurrentTabUrl();
+});
+
+browser.commands.onCommand.addListener((command) => {
+	if (command === "copy-url") {
+		getCurrentTabUrl();
+	}
+});
+
+// SEND MESSAGE TO CONTENT.JS
+
+function sendMessageToContentScript(status) {
+	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+		if (tabs.length > 0) {
+			browser.tabs.sendMessage(tabs[0].id, { action: 'showToast', message: status });
+		}
+	});
+}
