@@ -47,11 +47,21 @@
 			);
 			target = 372CA1322CB1056F00537E83 /* NiceCopy for Safari */;
 		};
+		373775A12CC567CF009276FA /* Exceptions for "NiceCopy" folder in "NiceCopy" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 372CA11C2CB1053800537E83 /* NiceCopy */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		372CA11F2CB1053800537E83 /* NiceCopy */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				373775A12CC567CF009276FA /* Exceptions for "NiceCopy" folder in "NiceCopy" target */,
+			);
 			path = NiceCopy;
 			sourceTree = "<group>";
 		};
@@ -181,6 +191,8 @@
 			);
 			mainGroup = 372CA1142CB1053800537E83;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 372CA11E2CB1053800537E83 /* Products */;
 			projectDirPath = "";
@@ -294,6 +306,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -350,6 +363,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -367,6 +381,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NiceCopy/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,6 +410,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NiceCopy/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,7 +448,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.marlonraskin.NiceCopy.NiceCopy-for-Safari";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marlonraskin.NiceCopy.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -461,7 +479,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.marlonraskin.NiceCopy.NiceCopy-for-Safari";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marlonraskin.NiceCopy.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

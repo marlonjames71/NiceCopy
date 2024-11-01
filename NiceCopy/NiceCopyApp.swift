@@ -9,9 +9,31 @@ import SwiftUI
 
 @main
 struct NiceCopyApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+		
+	@Environment(\.openWindow) var openWindow
+	
+	var body: some Scene {
+		MenuBarExtra {
+			Button("Settings & Info") {
+				openWindow(id: "open_app")
+			}
+		} label: {
+			let image: NSImage = {
+				let ratio = $0.size.height / $0.size.width
+				$0.size.height = 18
+				$0.size.width = 18 / ratio
+				$0.isTemplate = true
+				return $0
+			}(NSImage(resource: .niceCopyIcon))
+			
+			Image(nsImage: image)
+		}
+		
+		Window("NiceCopy", id: "open_app") {
+			SettingsView()
+		}
+		.windowResizability(.contentSize)
+		.windowLevel(.floating)
+		.defaultLaunchBehavior(.suppressed)
+	}
 }

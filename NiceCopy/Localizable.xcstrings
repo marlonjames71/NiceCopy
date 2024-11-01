@@ -1,0 +1,65 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "• " : {
+      "shouldTranslate" : false
+    },
+    "App icon by [Noah Raskin](https://x.com/noahraskin_)" : {
+
+    },
+    "Attribution" : {
+
+    },
+    "Click the extension icon to copy the current tab's URL." : {
+
+    },
+    "How to Use" : {
+
+    },
+    "Info" : {
+
+    },
+    "NiceCopy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NiceCopy needs to stay open to write URLs to the clipboard due to Safari Web Extension limits. However, it won't appear in your dock or app switcher. You can always reopen this window from the menu bar and clicking the \"Settings\" option.\n\nIf you'd like to quit NiceCopy, make sure you disable the extension first as it will just reopen the app. Once the extension is disabled, you can quit NiceCopy by clicking the \"Quit\" option."
+          }
+        }
+      }
+    },
+    "NiceCopy needs to stay open to write URLs to the clipboard due to Safari Web Extension limits. However, it won't appear in your dock or app switcher. You can always reopen this window from the menu bar and clicking the \"Settings\" option.\n\nIf you'd like to quit NiceCopy, make sure you disable the extension first as it will just reopen the app. Once the extension is disabled, you can quit NiceCopy by clicking the \"Quit\" option." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NiceCopy needs to stay open to write URLs to the clipboard due to Safari Web Extension limits. However, it won't appear in your dock or app switcher. You can always reopen this window from the menu bar and clicking the \"Settings\" option.\n\nIf you'd like to quit NiceCopy, make sure you disable the extension first as it will just reopen the app. Once the extension is disabled, you can quit NiceCopy by clicking the \"Quit\" option."
+          }
+        }
+      }
+    },
+    "NiceCopy Settings & Info" : {
+
+    },
+    "Press  ⌘ ⇧ C  to copy the current tab's URL." : {
+
+    },
+    "Privacy Policy" : {
+
+    },
+    "Right-click anywhere on the webpage and select \"Copy Page URL\"." : {
+
+    },
+    "Settings & Info" : {
+
+    },
+    "Source Code & Contribution" : {
+
+    },
+    "Vectors and icons by [Microsoft](https://github.com/microsoft/vscode-codicons?ref=svgrepo.com) in MIT License via [SVG Repo](https://www.svgrepo.com)" : {
+
+    }
+  },
+  "version" : "1.0"
+}

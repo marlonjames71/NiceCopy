@@ -2,8 +2,8 @@
 	"manifest_version": 3,
 	"default_locale": "en",
 	
-	"name": "NiceCopy for Safari",
-	"description": "Copy current page URL to clipboard with: Command+Shift+C",
+	"name": "__MSG_extension_name__",
+	"description": "__MSG_extension_description__",
 	"version": "1.0",
 	
 	"icons": {
@@ -41,6 +41,7 @@
 	"permissions": [
 		"tabs",
 		"activeTab",
-		"nativeMessaging"
+		"nativeMessaging",
+		"contextMenus"
 	]
 }

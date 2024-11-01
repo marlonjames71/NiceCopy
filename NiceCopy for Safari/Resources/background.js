@@ -1,63 +1,107 @@
-
-console.log('Background script loaded');
+console.log("Background script loaded");
 
 // GET TAB URL
 
 async function getCurrentTabUrl() {
-	try {
-		const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-		if (tabs.length > 0) {
-			const currentUrl = tabs[0].url;
-			console.log('Current tab URL:', currentUrl);
-			sendUrlToNativeApp(currentUrl);
-		} else {
-			console.error('No active tab found.');
-		}
-	} catch (error) {
-		console.error('Error querying tabs:', error);
-	}
+   try {
+      const tabs = await browser.tabs.query({
+         active: true,
+         currentWindow: true,
+      });
+      if (tabs.length > 0) {
+         const currentUrl = tabs[0].url;
+         console.log("Current tab URL:", currentUrl);
+         sendUrlToNativeApp(currentUrl);
+      } else {
+         console.error("No active tab found.");
+      }
+   } catch (error) {
+      console.error("Error querying tabs:", error);
+   }
 }
 
 // SEND URL TO APP
 
-function sendUrlToNativeApp(url) {
-	const message = {
-		action: 'sendUrl',
-		url: url
-	};
-	
-	browser.runtime.sendNativeMessage('NiceCopy for Safari', message)
-		.then(response => {
-			console.log('Response from native app:', response);
-			
-			if (response.status === "Copied Current URL") {
-				sendMessageToContentScript(response.status);
-			}
-		})
-		.catch(error => {
-			console.error('Error sending message to native app:', error);
-		});
+function onCopyURLResponse(response) {
+   console.log(`Copy URL Response Received: ${response}`);
+
+   if (response.status === "Copied URL") {
+      sendMessageToContentScript(response.status);
+   }
 }
 
+function onCopyURLError(error) {
+   console.log(`Copy URL Error: ${error}`);
+}
+
+function sendUrlToNativeApp(url) {
+   const message = {
+      action: "sendUrl",
+      url: url,
+   };
+
+   let sending = browser.runtime.sendNativeMessage(
+      "NiceCopy for Safari",
+      message
+   );
+   sending.then(onCopyURLResponse, onCopyURLError);
+}
 
 // USER ACTIONS
 
 browser.action.onClicked.addListener(() => {
-	getCurrentTabUrl();
+   getCurrentTabUrl();
 });
 
 browser.commands.onCommand.addListener((command) => {
-	if (command === "copy-url") {
-		getCurrentTabUrl();
-	}
+   if (command === "copy-url") {
+      getCurrentTabUrl();
+   }
+});
+
+// CONTEXT MENUS
+
+browser.runtime.onInstalled.addListener(() => {
+   browser.contextMenus.create({
+      id: "context_menu-copy_url",
+      title: "Copy Page URL",
+      contexts: ["all"],
+   });
+});
+
+function onOpenAppResponse(response) {
+   console.log(`Open App Received: ${response}`);
+}
+
+function onOpenAppError(error) {
+   console.log(`Open App Error: ${error}`);
+}
+
+browser.contextMenus.onClicked.addListener((info, tab) => {
+   if (info.menuItemId === "context_menu-copy_url") {
+      getCurrentTabUrl();
+   }
+
+   const message = { action: "openApp" };
+
+   if (info.menuItemId === "context_menu-open_app") {
+      let sending = browser.runtime.sendNativeMessage(
+         "NiceCopy for Safari",
+         message
+      );
+      sending.then(onOpenAppResponse, onOpenAppError);
+   }
 });
 
 // SEND MESSAGE TO CONTENT.JS
 
 function sendMessageToContentScript(status) {
-	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-		if (tabs.length > 0) {
-			browser.tabs.sendMessage(tabs[0].id, { action: 'showToast', message: status });
-		}
-	});
+   browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+      if (tabs.length > 0) {
+         browser.tabs.sendMessage(tabs[0].id, {
+            action: "showToast",
+            message: status,
+         });
+      }
+   });
 }

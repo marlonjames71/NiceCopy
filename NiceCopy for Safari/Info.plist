@@ -4,14 +4,29 @@
 <dict>
 	<key>NSExtension</key>
 	<dict>
-		<key>SFSafariContentScript</key>
-		<array>
-			<string></string>
-		</array>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.Safari.web-extension</string>
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).SafariWebExtensionHandler</string>
+		<key>SFSafariContentScript</key>
+		<array>
+			<string></string>
+		</array>
+		<key>SFSafariContextMenu</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>context_menu-open_app</string>
+				<key>Text</key>
+				<string>Open NiceCopy App</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>context_menu-copy_url</string>
+				<key>Text</key>
+				<string>Copy Current URL</string>
+			</dict>
+		</array>
 	</dict>
 </dict>
 </plist>
