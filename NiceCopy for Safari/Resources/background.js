@@ -65,8 +65,14 @@ browser.runtime.onInstalled.addListener(() => {
    browser.contextMenus.create({
       id: "context_menu-copy_url",
       title: "Copy Page URL",
-      contexts: ["all"],
+      contexts: ["page"],
    });
+	
+	browser.contextMenus.create({
+		id: "context_menu-open_app",
+		title: "Open NiceCopy App",
+		contexts: ["action"]
+	})
 });
 
 function onOpenAppResponse(response) {

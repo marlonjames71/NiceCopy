@@ -16,7 +16,7 @@ struct SettingsView: View {
 						.font(.title3)
 						.fontWeight(.bold)
 					
-					Text("NiceCopy needs to stay open to write URLs to the clipboard due to Safari Web Extension limits. However, it won't appear in your dock or app switcher. You can always reopen this window from the menu bar and clicking the \"Settings\" option.\n\nIf you'd like to quit NiceCopy, make sure you disable the extension first as it will just reopen the app. Once the extension is disabled, you can quit NiceCopy by clicking the \"Quit\" option.")
+					Text("NiceCopy needs to stay open to write URLs to the clipboard due to Safari Web Extension limits. However, it won't appear in your dock or app switcher. You can always reopen this window from the menu bar and clicking the \"Settings & Info\" option.\n\nIf you'd like to quit NiceCopy, make sure you disable the extension first as it will just reopen the app in the background if you don't. Once the extension is disabled, you can quit NiceCopy by clicking the \"Quit NiceCopy\" option in the menu bar. If you'd like to reopen the menu bar app, right-click the extension icon in Safari and choose \"Open NiceCopy App\".")
 						.multilineTextAlignment(.leading)
 						.opacity(0.8)
 				}
@@ -38,7 +38,7 @@ struct SettingsView: View {
 			}
 			
 			Section {
-				Link(destination: URL(string: "https://google.com")!) {
+				Link(destination: URL(string: "https://github.com/marlonjames71/NiceCopy")!) {
 					HStack {
 						Label("Source Code & Contribution", image: .githubFill)
 						Spacer()
@@ -54,7 +54,6 @@ struct SettingsView: View {
 							.foregroundStyle(.secondary)
 					}
 				}
-				.tint(.primary)
 			}
 			
 			Section {

@@ -29,7 +29,11 @@
         }
       }
     },
+    "NiceCopy needs to stay open to write URLs to the clipboard due to Safari Web Extension limits. However, it won't appear in your dock or app switcher. You can always reopen this window from the menu bar and clicking the \"Settings & Info\" option.\n\nIf you'd like to quit NiceCopy, make sure you disable the extension first as it will just reopen the app in the background if you don't. Once the extension is disabled, you can quit NiceCopy by clicking the \"Quit NiceCopy\" option in the menu bar. If you'd like to reopen the menu bar app, right-click the extension icon in Safari and choose \"Open NiceCopy App\"." : {
+
+    },
     "NiceCopy needs to stay open to write URLs to the clipboard due to Safari Web Extension limits. However, it won't appear in your dock or app switcher. You can always reopen this window from the menu bar and clicking the \"Settings\" option.\n\nIf you'd like to quit NiceCopy, make sure you disable the extension first as it will just reopen the app. Once the extension is disabled, you can quit NiceCopy by clicking the \"Quit\" option." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -46,6 +50,9 @@
 
     },
     "Privacy Policy" : {
+
+    },
+    "Quit NiceCopy" : {
 
     },
     "Right-click anywhere on the webpage and select \"Copy Page URL\"." : {

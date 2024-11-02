@@ -5,6 +5,7 @@
 //  Created by Marlon Raskin on 2024-10-05.
 //
 
+import Cocoa
 import SwiftUI
 
 @main
@@ -16,6 +17,9 @@ struct NiceCopyApp: App {
 		MenuBarExtra {
 			Button("Settings & Info") {
 				openWindow(id: "open_app")
+			}
+			Button("Quit NiceCopy") {
+				NSApp.terminate(self)
 			}
 		} label: {
 			let image: NSImage = {
