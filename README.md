@@ -10,6 +10,11 @@ There are several convenient ways to copy the URL:
 ### Screenshot
 ![NiceCopy extension](README%20Assets/Toast.png)
 
+### Demo
+https://github.com/user-attachments/assets/8263d0aa-e459-4eab-ab61-7f29546eddee
+
+
+
 ---
 
 ## Why NiceCopy?
