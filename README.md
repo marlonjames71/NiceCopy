@@ -1,23 +1,26 @@
 # NiceCopy
-A Safari extension that allows you to copy the current tab's URL to your clipboard very easily and provides feedback in the form of a nice toast to communicate that the url was copied successfully.
+NiceCopy is a Safari extension designed to make copying the current tab's URL to your clipboard quick and easy. It provides immediate feedback with a friendly toast notification, ensuring you know the URL was copied successfully.
 
-There are a few ways to copy the url:
-1. Via a shortcut: ⌘ ⇧ C
-2. Right-click anywhere on the web page and select “Copy Page URL” from the context menu
-3. Clicking the extension icon in Safari’s toolbar
+## Features
+There are several convenient ways to copy the URL:
+1. Keyboard Shortcut: Press ⌘ ⇧ C
+1. Context Menu: Right-click anywhere on a web page and select “Copy Page URL”
+1. Toolbar Icon: Click the NiceCopy icon in Safari’s toolbar
 
----
-
-## Why was this extension made?
-I (Marlon) really appreciated that shortcut when using the Arc browser and certainly miss it when I use other browsers. This is something I think should be standard for every browser. 
-
-There is a Safari extension that does this very thing, so why create another one? That extension, by the way, is [Supercopy for Safari](https://apps.apple.com/us/app/supercopy-for-safari/id6477720316) and it works great. The reason I created this extension was because I was missing the visual feedback that I was used to seeing in Arc. I reached out to the developer of Supercopy to see if he would consider open sourcing it so I could contribute, but I never heard back. So, I built my own and I’m open sourcing in case others would like to contribute and make it better—I hope you do.
-
-## Contribution
-For contribution, please check the issues and PRs first before creating PRs with your changes. If you’d like to contribute code, please create an issue first for the changes you’d like to make and make sure it doesn’t already exist. Then we’ll get that ticket assigned to you (I’m still working this process out).
-
-When I made this, I had no idea what I was doing as I’ve never created an extension before and I’m not that familiar with web development, so I’d love to see this extension made better by the community.
+### Screenshot
+![NiceCopy extension](README%20Assets/Toast.png)
 
 ---
 
-Thanks for checking out NiceCopy! Happy web surfing! 🏄‍♂️
+## Why NiceCopy?
+I’m Marlon, and I created NiceCopy because I missed the handy link-copying shortcut available in the Arc browser when using other browsers. While there is a similar extension for Safari, [Supercopy for Safari](https://apps.apple.com/us/app/supercopy-for-safari/id6477720316), which works well, I wanted the visual feedback I was accustomed to in Arc.
+After reaching out to the developer of Supercopy to discuss open-sourcing it, and not receiving a response, I decided to create my own version. By open-sourcing NiceCopy, I hope others will join in to enhance its functionality.
+
+## Contributing
+We welcome contributions! Before you start, please check the existing issues and pull requests. If you want to contribute code, create an issue first to discuss the changes you’d like to make, ensuring there's no overlap with existing work. Once confirmed, we’ll assign the ticket to you (we’re still refining this process).
+
+When I started building this extension, I was new to extension development and web development in general. I’m eager to see how the community can improve NiceCopy.
+
+---
+
+Thanks for exploring NiceCopy! Enjoy your web surfing adventures! 🏄‍♂️
