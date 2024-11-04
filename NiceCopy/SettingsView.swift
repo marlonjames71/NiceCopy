@@ -46,7 +46,7 @@ struct SettingsView: View {
 							.foregroundStyle(.secondary)
 					}
 				}
-				Link(destination: URL(string: "https://google.com")!) {
+				Link(destination: URL(string: "https://github.com/marlonjames71/NiceCopy/blob/main/Privacy%20Policy.md")!) {
 					HStack {
 						Label("Privacy Policy", systemImage: "shield.lefthalf.fill")
 						Spacer()
