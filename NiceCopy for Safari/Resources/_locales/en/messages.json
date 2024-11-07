@@ -4,7 +4,7 @@
         "description": "The display name for the extension."
     },
     "extension_description": {
-        "message": "This is NiceCopy for Safari. You should tell us what your extension does here.",
+        "message": "Easily copy the current tab's URL by using the shortcut ⌘ ⇧ C, clicking the extension icon in the toolbar, or by right-clicking anywhere on the webpage and selecting 'Copy Page URL' from the context menu.".",
         "description": "Description of what the extension does."
     }
 }
