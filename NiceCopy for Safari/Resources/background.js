@@ -61,19 +61,34 @@ browser.commands.onCommand.addListener((command) => {
 
 // CONTEXT MENUS
 
-browser.runtime.onInstalled.addListener(() => {
-   browser.contextMenus.create({
-      id: "context_menu-copy_url",
-      title: "Copy Page URL",
-      contexts: ["page"],
-   });
-	
-	browser.contextMenus.create({
-		id: "context_menu-open_app",
-		title: "Open NiceCopy App",
-		contexts: ["action"]
-	})
-});
+// Create context menus function
+function createContextMenus() {
+   // Remove existing menus first to avoid duplicates
+   browser.contextMenus
+      .removeAll()
+      .then(() => {
+         browser.contextMenus.create({
+            id: "context_menu-copy_url",
+            title: "Copy Page URL",
+            contexts: ["page"],
+         });
+
+         browser.contextMenus.create({
+            id: "context_menu-open_app",
+            title: "Open NiceCopy App",
+            contexts: ["action"],
+         });
+      })
+      .catch((error) => {
+         console.error("Error creating context menus:", error);
+      });
+}
+
+// Create menus when extension starts
+createContextMenus();
+
+// Also create menus on installation (optional, but good practice)
+browser.runtime.onInstalled.addListener(createContextMenus);
 
 function onOpenAppResponse(response) {
    console.log(`Open App Received: ${response}`);

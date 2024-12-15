@@ -35,11 +35,12 @@ struct NiceCopyApp: App {
 		
 		Window("NiceCopy", id: "open_app") {
 			SettingsView()
+				.frame(width: 500, height: 600)
 		}
-		.windowResizability(.contentSize)
 		.modifiers { scene in
 			if #available(macOS 15.0, *) {
 				scene
+					.windowIdealSize(.fitToContent)
 					.windowLevel(.floating)
 					.defaultLaunchBehavior(.suppressed)
 			}
