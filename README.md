@@ -1,6 +1,10 @@
 # NiceCopy
 [NiceCopy](https://apps.apple.com/us/app/nicecopy/id6737711441?mt=12) is a Safari extension designed to make copying the current tab's URL to your clipboard quick and easy. It provides immediate feedback with a friendly toast notification, ensuring you know the URL was copied successfully.
 
+
+<a href="https://apps.apple.com/us/app/nicecopy/id6737711441?mt=12&itscg=30200&itsct=apps_box_badge&mttnsubad=6737711441" style="display: inline-block;"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1730851200" alt="Download on the App Store" style="width: 245px; height: 82px; vertical-align: middle; object-fit: contain;"/></a>
+    
+
 ## Features
 There are several convenient ways to copy the URL:
 1. Keyboard Shortcut: Press ⌘ ⇧ C
