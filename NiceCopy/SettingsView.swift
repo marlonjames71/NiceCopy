@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+	@AppStorage("copyURLShortcut") private var copyURLShortcut: String = "⌘ ⇧ C"
+	
 	var body: some View {
 		Form {
 			Section {
@@ -29,7 +31,7 @@ struct SettingsView: View {
 						.fontWeight(.bold)
 					
 					Group {
-						listItem(Text("Press  ⌘ ⇧ C  to copy the current tab's URL."))
+						listItem(Text("Press  ⌘ ⇧ C (default) to copy the current tab's URL. You can change this shortcut in the Keyboard Shortcuts section below."))
 						listItem(Text("Click the extension icon to copy the current tab's URL."))
 						listItem(Text("Right-click anywhere on the webpage and select \"Copy Page URL\"."))
 					}
@@ -66,6 +68,14 @@ struct SettingsView: View {
 					listItem(Text("App icon by [Noah Raskin](https://x.com/noahraskin_)"))
 				}
 			}
+			
+			Section(header: Text("Keyboard Shortcuts")) {
+				HStack {
+					Text("Copy URL")
+					Spacer()
+					KeyboardShortcutRecorder(shortcut: $copyURLShortcut)
+				}
+			}
 		}
 		.formStyle(.grouped)
 		.navigationTitle("NiceCopy Settings & Info")
@@ -75,6 +85,46 @@ struct SettingsView: View {
 		Group { Text("• ").monospaced() + text }
 		.padding(.vertical, 2)
 		.padding(.horizontal, 5)
+	}
+}
+
+struct KeyboardShortcutRecorder: View {
+	@Binding var shortcut: String
+	@State private var isRecording = false
+	
+	var body: some View {
+		Button(action: {
+			isRecording.toggle()
+		}) {
+			Text(shortcut.isEmpty ? "Click to record" : shortcut)
+				.frame(width: 150)
+		}
+		.buttonStyle(.bordered)
+		.onAppear {
+			NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+				if isRecording {
+					let modifiers = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
+					let key = event.charactersIgnoringModifiers ?? ""
+					
+					if !key.isEmpty {
+						shortcut = modifierString(from: modifiers) + key.uppercased()
+						isRecording = false
+					}
+				}
+				return event
+			}
+		}
+	}
+	
+	private func modifierString(from flags: NSEvent.ModifierFlags) -> String {
+		var modifiers: [String] = []
+		
+		if flags.contains(.command) { modifiers.append("⌘") }
+		if flags.contains(.shift) { modifiers.append("⇧") }
+		if flags.contains(.option) { modifiers.append("⌥") }
+		if flags.contains(.control) { modifiers.append("⌃") }
+		
+		return modifiers.joined() + (modifiers.isEmpty ? "" : " ")
 	}
 }
 

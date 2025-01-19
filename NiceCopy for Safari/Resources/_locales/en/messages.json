@@ -1,10 +1,10 @@
 {
-    "extension_name": {
-        "message": "NiceCopy for Safari",
-        "description": "The display name for the extension."
-    },
-    "extension_description": {
-        "message": "Copy the current tab's URL with ⌘ ⇧ C, the toolbar icon, or right-click and select 'Copy Page URL'.",
-        "description": "Description of what the extension does."
-    }
+  "extension_name": {
+    "message": "NiceCopy for Safari",
+    "description": "The display name for the extension."
+  },
+  "extension_description": {
+    "message": "Copy the current tab's URL with ⌘ ⇧ C (default), the toolbar icon, or right-click and select 'Copy Page URL'.",
+    "description": "Description of what the extension does."
+  }
 }
