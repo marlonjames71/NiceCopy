@@ -1,88 +1,13 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "\n2. Follow the README instructions" : {
-
-    },
-    "\n3. The extension will be ready to use" : {
-
-    },
-    "\nFirefox" : {
-
-    },
-    "   • A README with instructions" : {
-
-    },
-    "   • A ZIP file for sharing" : {
-
-    },
-    "   • The extension files" : {
-
-    },
     "• " : {
       "shouldTranslate" : false
-    },
-    "• A README with step-by-step instructions" : {
-
-    },
-    "• A ZIP file for easy sharing or distribution" : {
-
-    },
-    "• Check if developer mode is enabled (Chromium)" : {
-
-    },
-    "• For permanent installation, submit to Mozilla" : {
-
-    },
-    "• Installation is permanent until manually removed" : {
-
-    },
-    "• Make sure your browser is up to date" : {
-
-    },
-    "• Temporary installation (removed on browser restart)" : {
-
-    },
-    "• The extension files needed for installation" : {
-
-    },
-    "• Try restarting your browser" : {
-
-    },
-    "• Visit our GitHub page for support" : {
-
-    },
-    "• Works with any Chromium-based browser" : {
-
-    },
-    "1. A folder will open containing:" : {
-
-    },
-    "About Browser Extensions" : {
-
-    },
-    "Add to Chromium" : {
-
-    },
-    "Add to Firefox" : {
-
     },
     "App icon by [Noah Raskin](https://x.com/noahraskin_)" : {
 
     },
     "Attribution" : {
-
-    },
-    "Browser Extension Help" : {
-
-    },
-    "Browser Extensions" : {
-
-    },
-    "Browser-Specific Notes" : {
-
-    },
-    "Chromium Browsers (Chrome, Edge, Brave)" : {
 
     },
     "Click the extension icon to copy the current tab's URL." : {
@@ -91,16 +16,7 @@
     "How to Use" : {
 
     },
-    "If you encounter any issues:" : {
-
-    },
     "Info" : {
-
-    },
-    "Installation Process" : {
-
-    },
-    "Learn more about browser extensions" : {
 
     },
     "NiceCopy" : {
@@ -112,12 +28,6 @@
           }
         }
       }
-    },
-    "NiceCopy can be installed in multiple browsers. Each browser has its own way of handling extensions, which is why the installation process differs slightly between them." : {
-
-    },
-    "NiceCopy is available for other browsers too. When you export the extension, a folder will open containing the extension files and instructions:" : {
-
     },
     "NiceCopy needs to stay open to write URLs to the clipboard due to Safari Web Extension limits. However, it won't appear in your dock or app switcher. You can always reopen this window from the menu bar and clicking the \"Settings & Info\" option.\n\nIf you'd like to quit NiceCopy, make sure you disable the extension first as it will just reopen the app in the background if you don't. Once the extension is disabled, you can quit NiceCopy by clicking the \"Quit NiceCopy\" option in the menu bar. If you'd like to reopen the menu bar app, right-click the extension icon in Safari and choose \"Open NiceCopy App\"." : {
 
@@ -154,13 +64,7 @@
     "Source Code & Contribution" : {
 
     },
-    "Troubleshooting" : {
-
-    },
     "Vectors and icons by [Microsoft](https://github.com/microsoft/vscode-codicons?ref=svgrepo.com) in MIT License via [SVG Repo](https://www.svgrepo.com)" : {
-
-    },
-    "When you click one of the browser extension buttons:" : {
 
     }
   },
