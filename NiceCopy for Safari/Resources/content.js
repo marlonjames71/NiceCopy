@@ -49,7 +49,8 @@ function showToast(message) {
 			top: '20px',
 			right: '20px',
 			display: 'flex',
-			alignItems: 'center',
+			alignItems: 'center', 
+			justifyContent: 'flex-start', 
 			gap: '0.5em',
 			padding: '0.8em',
 			fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", system-ui, ui-sans-serif, Helvetica',
@@ -67,18 +68,33 @@ function showToast(message) {
 			transformOrigin: 'top center'
 		});
 		
+		const iconContainer = document.createElement('span');
+		Object.assign(iconContainer.style, {
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center',
+			lineHeight: '1',
+			height: '16px' 
+		});
+		
 		const icon = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00ff80" 
 				stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 				<path stroke="#00ff80" d="M21.801 10A10 10 0 1 1 17 3.335"/>
 				<path stroke="#00ff80" d="m9 11 3 3L22 4"/>
 				</svg>`;
 		
-		const iconContainer = document.createElement('span');
 		iconContainer.innerHTML = icon;
-		toast.appendChild(iconContainer);
 		
-		const textNode = document.createTextNode(message);
-		toast.appendChild(textNode);
+		const textContainer = document.createElement('span');
+		Object.assign(textContainer.style, {
+			display: 'flex',
+			alignItems: 'center',
+			lineHeight: '1'
+		});
+		textContainer.textContent = message;
+		
+		toast.appendChild(iconContainer);
+		toast.appendChild(textContainer);
 		
 		container.appendChild(toast);
 		document.body.appendChild(container);
