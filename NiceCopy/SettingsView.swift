@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AppKit
+import UniformTypeIdentifiers
 
 struct SettingsView: View {
 	var body: some View {
@@ -43,15 +45,14 @@ struct SettingsView: View {
 						Label("Source Code & Contribution", image: .githubFill)
 						Spacer()
 						Image(systemName: "arrow.up.forward.app")
-							.foregroundStyle(.secondary)
 					}
 				}
+				
 				Link(destination: URL(string: "https://github.com/marlonjames71/NiceCopy/blob/main/Privacy%20Policy.md")!) {
 					HStack {
 						Label("Privacy Policy", systemImage: "shield.lefthalf.fill")
 						Spacer()
 						Image(systemName: "arrow.up.forward.app")
-							.foregroundStyle(.secondary)
 					}
 				}
 			}
@@ -73,8 +74,8 @@ struct SettingsView: View {
 	
 	private func listItem(_ text: Text) -> some View {
 		Group { Text("• ").monospaced() + text }
-		.padding(.vertical, 2)
-		.padding(.horizontal, 5)
+			.padding(.vertical, 2)
+			.padding(.horizontal, 5)
 	}
 }
 
