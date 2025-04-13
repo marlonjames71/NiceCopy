@@ -42,18 +42,17 @@ struct SettingsView: View {
 			Section {
 				Link(destination: URL(string: "https://github.com/marlonjames71/NiceCopy")!) {
 					HStack {
-						Label("Source Code & Contribution", systemImage: "chevron.left.forwardslash.chevron.right")
+						Label("Source Code & Contribution", image: .githubFill)
 						Spacer()
 						Image(systemName: "arrow.up.forward.app")
-							.foregroundStyle(.secondary)
 					}
 				}
+				
 				Link(destination: URL(string: "https://github.com/marlonjames71/NiceCopy/blob/main/Privacy%20Policy.md")!) {
 					HStack {
 						Label("Privacy Policy", systemImage: "shield.lefthalf.fill")
 						Spacer()
 						Image(systemName: "arrow.up.forward.app")
-							.foregroundStyle(.secondary)
 					}
 				}
 			}
